@@ -1,0 +1,74 @@
+{% extends 'covid19/base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<!-- Body -->
+<div class="container-fluid">
+  <main role="main">
+    <div class="album bg-transparent">
+      <div class="container mb-4">
+        
+        <p class="font-weight-bold">Symptom Checker</p>
+        <p class="text-muted">
+          Please answer the question to the best of your knowledge
+        </p>
+        
+        <!-- Question Card -->
+
+        <form method="POST">{% csrf_token %}
+          <select class="custom-select card shadow-sm p-4 my-3 hide-scroll-bar" name="fever" size="3">
+            <option class="h6 text-wrap" disabled>Do you have fever?</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="Yes">Yes</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="No">No</option>
+          </select>
+          
+          <select class="custom-select card shadow-sm p-4 my-3 hide-scroll-bar" name="bodyPain" size="3">
+            <option class="h6 text-wrap" disabled>Do you have body pain?</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="Yes">Yes</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="No">No</option>
+          </select>
+          
+          <select class="custom-select card shadow-sm p-4 my-3 hide-scroll-bar" name="gender" size="4">
+            <option class="h6 text-wrap" disabled>What is your gender?</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="Male">Male</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="Female">Female</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="Other">Other</option>
+          </select>
+          
+          <select class="custom-select card shadow-sm p-4 my-3 hide-scroll-bar" name="age" size="5">
+            <option class="h6 text-wrap" disabled>What is your age-group?</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="Less than 12 years">Less than 12 years</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="12 - 50 years">12 - 50 years</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="51 - 60 years">51 - 60 years</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="Above 60 years">Above 60 years</option>
+          </select>
+          
+          <select class="custom-select card shadow-sm p-4 my-3 hide-scroll-bar" name="runnyNose" size="3">
+            <option class="h6 text-wrap" disabled>Do you have Cold?</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="Yes">Yes</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="No">No</option>
+          </select>
+          
+          <select class="custom-select card shadow-sm p-4 my-3 hide-scroll-bar" name="diffBreath" size="3">
+            <option class="h6 text-wrap" disabled>Do you fill shortness of breath?</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="Yes">Yes</option>
+            <option class="list-group-item list-group-item-action my-1 border" value="No">No</option>
+          </select>
+                    
+          <div class="text-center">
+            <button type="submit" class="btn btn-dark btn-md btn-block">Submit</button>
+          </div>
+          
+
+        </form>
+
+        <!-- End Question Card -->
+
+
+
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

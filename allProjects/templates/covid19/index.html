@@ -1,0 +1,60 @@
+{% extends 'covid19/base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<!-- Body -->
+<div class="container">
+    <main role="main">
+        <div class="album bg-white">
+            <div class="container">
+                <h1 class="font-weight-bold google-font">India</h1>
+
+                <h3>
+                    <span><img src="https://www.mohfw.gov.in/assets/images/icon-infected.png" width="40" height="40"></span>
+                    <span class="font-weight-bold">COVID-19</span> Statewise Status
+                </h3> 
+                <h6>
+                    <span>Total Confirmed Cases <span class="font-weight-bold h3" style="color: red;">{{maxcase.1}}</span></span>
+                    <span>Active Cases <span class="badge badge-warning badge-pill text-white">{{activeCase}}</span></span>
+                    <span>Deaths <span class="badge badge-danger badge-pill">{{maxcase.3}}</span></span>
+                    <span>Cured <span class="badge badge-success badge-pill">{{maxcase.2}}</span></span>
+                </h6>
+                
+                <br>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Sr. No.</th>
+                                <th class="text-truncate">Name of State / UT</th>
+                                <th class="text-truncate">Total Confirmed cases (Including 49 foreign Nationals)</th>
+                                <th class="text-truncate">Cured/Discharged/Migrated</th>
+                                <th class="text-truncate">Death</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for data in mydata %}
+                            <tr id='d{{data.1}}'>
+                                <td>{{data.1}}</td>
+                                <td id='state{{data.1}}'>{{data.2}}</td>
+                                <td>{{data.3}}</td>
+                                <td>{{data.4}}</td>
+                                <td>{{data.5}}</td>
+                            </tr>
+                            {% endfor %}
+                            <tr class="font-weight-bold">
+                                <td colspan="2">{{maxcase.0}}</td>
+                                <td>{{maxcase.1}}</td>
+                                <td>{{maxcase.2}}</td>
+                                <td>{{maxcase.3}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

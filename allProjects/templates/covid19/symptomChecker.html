@@ -1,0 +1,62 @@
+{% extends 'covid19/base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<!-- Body -->
+<div class="container-fluid">
+    <main role="main">
+        <div class="album bg-transparent">
+            <div class="container mb-4">
+
+                <div class="jumbotron jumbotron-fluid bg-success text-white mb-3">
+                  <div class="container text-center">
+                    <h3 class="display-4">INDIA</h3>
+                    <h3 class="font-weight-bold">Symptom Checker</h3>
+                    <p class="lead">COVID-19 INDIA TOOL</p>
+                  </div>
+                </div>
+
+                <p class="text-muted">
+                  Coronavirus disease (COVID-19) is an infection disease caused by a new virus that had not been previosuly identified in humans. Please use the below options to learn more about the disease and keep yourself updated.
+                </p>
+
+                <ul class="list-group">
+                  <a href="/covid19/check_symptom_tool/" class="text-decoration-none text-dark">
+                  <li class="list-group-item my-2 shadow-sm">
+                    <span><img src="https://www.mohfw.gov.in/assets/images/icon-infected.png" width="40" height="40"></span>
+                    <span class="ml-3">Symptom Checker</span>
+                  </li>
+                </a>
+                <a href="#" class="text-decoration-none text-dark">
+                  <li class="list-group-item my-2 shadow-sm">
+                    <span><img src="https://www.mohfw.gov.in/assets/images/icon-inactive.png" width="40" height="40"></span>
+                    <span class="ml-3">Test Centres</span>
+                  </li>
+                </a>
+                <a href="/covid19/Statistics/" class="text-decoration-none text-dark">
+                  <li class="list-group-item my-2 shadow-sm">
+                    <span><img src="https://www.mohfw.gov.in/assets/images/icon-death.png" width="40" height="40"></span>
+                    <span class="ml-3">Statistics</span>
+                  </li>
+                </a>
+                <a href="https://www.mohfw.gov.in/#site-faq" target="blank" class="text-decoration-none text-dark">
+                  <li class="list-group-item my-2 shadow-sm">
+                    <span><img src="https://www.mohfw.gov.in/assets/images/icon-active.png" width="40" height="40"></span>
+                    <span class="ml-3">FAQ</span>
+                  </li>
+                </a>
+                <a href="mailto: ncov2019@gov.in" class="text-decoration-none text-dark">
+                  <li class="list-group-item my-2 shadow-sm">
+                    <span><img src="https://www.mohfw.gov.in/assets/images/icon-infected.png" width="40" height="40"></span>
+                    <span class="ml-3">Helpline Email</span>
+                  </li>
+                </a>
+                 
+                </ul>
+
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

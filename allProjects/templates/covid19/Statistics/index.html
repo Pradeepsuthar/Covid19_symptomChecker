@@ -1,0 +1,86 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Statistics</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+</body>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicHJhZGVlcG1hcGJveCIsImEiOiJjazhpZnFsNnkwMjY5M25wOThpN2dqMHpzIn0.zLTEfi1kZfXk5xXqZLPD7w';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        zoom: 3.8,
+        center: [80, 22],
+
+        // style: 'mapbox://styles/mapbox/dark-v10'
+    });
+</script>
+<script>
+
+    function updateMap() {
+        fetch("https://raw.githubusercontent.com/Pradeepsuthar/Pradeepsuthar.github.io/master/data.json")
+            .then(response => response.json())
+            .then(res => {
+                res.data.forEach(element => {
+                    latitude = element.latitude;
+                    longitude = element.longitude;
+
+                    cases = element.infected;
+                    death = element.dead;
+                    recovered = element.recovered;
+
+                    if (cases > 1) {
+                        color = `rgb(${cases}, 255, 244)`
+                    }
+                    if (death > 1) {
+                        color = `rgb(${death}, 20, 0)`
+                    }
+                    if (recovered > 1) {
+                        color = `rgb(${recovered}, 212, 61)`
+                    }
+
+                    // Mark on the Map
+                    // new mapboxgl.Marker({
+                    //     draggable: false,
+                    //     color: color,
+                    // })
+                        // .setLngLat([longitude, latitude])
+                        // .addTo(map);
+
+                    var map = new mapboxgl.Map({
+                        container: 'map',
+                        zoom: 0.3,
+                        center: [0, 20],
+                        style: 'mapbox://styles/mapbox/light-v10'
+                    });
+                    map.addControl(new mapboxgl.NavigationControl());
+
+                });
+            })
+    }
+
+    updateMap()
+
+    // let interval = 2000;
+    // setInterval(updateMap,interval);
+</script>
+
+</html>

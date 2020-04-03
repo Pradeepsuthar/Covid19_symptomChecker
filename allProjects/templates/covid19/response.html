@@ -1,0 +1,51 @@
+{% extends 'covid19/base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<!-- Body -->
+<div class="container-fluid">
+    <main role="main">
+        <div class="album bg-transparent">
+            <div class="container mb-4">
+
+                <p class="font-weight-bold">Symptom Checker</p>
+                <hr>
+
+                {% if risk %}
+                <div class="jumbotron jumbotron-fluid rounded shadow-sm p-4" style="background-color: #ffc3a6 ;">
+                    <div class="container">
+                        <p class="text-dark font-weight-normal h5">Risk of Covid-19*:</p>
+                        <p class="font-weight-bold h5" style="color: red;">High Risk {{infect_prob}}% (With Symptoms)</p>
+                    </div>
+                </div>
+                {% else %}
+                <div class="jumbotron jumbotron-fluid rounded shadow-sm p-4" style="background-color: #c5ffa6 ;">
+                    <div class="container">
+                        <p class="text-dark font-weight-normal h5">Risk of Covid-19*:</p>
+                        <p class="font-weight-bold h5" style="color: green;">Low Risk {{infect_prob}}% (With Symptoms)</p>
+                    </div>
+                </div>
+                {% endif %}
+
+
+                <p class="font-weight-bold">Your Response</p>
+                <hr>
+                <ul class="list-group">
+                    {% for key, value in response_data.items %}
+                    <li class="list-group-item">                        
+                        {{key}} <br>
+                        <small class="font-weight-bold">{{value}}</small>
+                    </li>
+                        {% endfor %}
+                </ul>
+
+                <div class="text-center my-4">
+                    <a href="/" class="btn btn-dark btn-md btn-block">Done</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}
