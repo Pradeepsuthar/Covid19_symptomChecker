@@ -1,0 +1,114 @@
+{% extends 'ewallet/base.html' %}
+{% load static %}
+
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<!-- Body -->
+<div class="container">
+    <main role="main">
+        <div class="jumbotron shadow bg-white">
+
+            <div class="row px-3">
+                <span>
+                    <div class="card rounded-0" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"> ₹{{currentbal}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Current Balance</h6>
+                        </div>
+                    </div>
+                </span>
+                <span>
+                    <div class="card rounded-0" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title text-success"> ₹{{cashback}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Cashback</h6>
+                        </div>
+                    </div>
+                </span>
+                <span>
+                    <div class="card rounded-0" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title text-success"> ₹{{refund}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Refund</h6>
+                        </div>
+                    </div>
+                </span>
+            </div>
+
+            <hr class="my-4">
+            <div class="row px-3">
+                <span>
+                    <a class="btn btn-dark btn-sm rounded-0" href="#" role="button" data-toggle="modal"
+                        data-target="#staticBackdrop"><img src="{% static 'ewallet/icons/addMoney.svg' %}" alt=""
+                            width="30" height="30"> Add Money</a>
+                </span>
+                <span class="pl-2">
+                    <a class="btn btn-dark btn-sm rounded-0" href="#" role="button"><img
+                            src="{% static 'ewallet/icons/addMoney.svg' %}" alt="" width="30" height="30">
+                        Withdrawal</a>
+                </span>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+    Launch static backdrop modal
+</button> -->
+
+<script type="text/javascript">
+    function ShowHideDiv(btnPassport) {
+        var promoCodeDiv = document.getElementById("promoCodeDiv");
+        if (btnPassport.value == "Yes") {
+            promoCodeDiv.style.display = "block";
+            btnPassport.value = "No";
+        } else {
+            promoCodeDiv.style.display = "none";
+            btnPassport.value = "Yes";
+        }
+    }
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Add Money to E-Wallet</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Available Balance ₹{{currentbal}}</p>
+
+                <form action="/ewallet/addMoney/" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="add_amount" name="amount" placeholder="₹ Amount">
+                        <small id="promocode" class="form-text text-muted">Have a Promocode? <input type="button" class="btn btn-link" value="Yes" onclick="ShowHideDiv(this)" /></small>
+                        
+                        <div id="promoCodeDiv" style="display: none">
+                            <input type="text" class="form-control" name="promocode" id="promocode" placeholder="Enter promocode here"/>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-dark rounded-0 border-0">Proceed to Add Money</button>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark rounded-0 border-0" data-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

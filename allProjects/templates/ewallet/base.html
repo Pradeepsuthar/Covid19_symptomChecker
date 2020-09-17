@@ -7,14 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon Icon -->
-    <link rel="icon" href="https://www.mygov.in/sites/all/themes/mygov/images/covid/active_patient.png"
-        type="image/gif">
+    <link rel="icon" href="https://bullmarketz.com/wp-content/uploads/2017/12/E-wallet.png" type="image/gif">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <title>{% block title %}{% endblock %}</title>
     <style>
@@ -31,16 +33,26 @@
         .hide-scroll-bar {
             -ms-overflow-style: none;
         }
+
+        .scroll {
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .scroll::-webkit-scrollbar {
+            width: 0px;
+        }
     </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 mb-3 bg-white border-bottom shadow-sm">
         <a href="/" class="my-0 mr-md-auto font-weight-normal h5 text-dark text-decoration-none">
             <span>
-                <img src="https://www.mohfw.gov.in/assets/images/icon-infected.png" width="30" height="30">
-            </span> Covid-19
+                <img src="https://bullmarketz.com/wp-content/uploads/2017/12/E-wallet.png" width="70" height="50">
+            </span> E-Wallet
         </a>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="javascript:history.back()">Back to Home</a>

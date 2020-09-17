@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from . import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='Home Page'),
-    path('covid19/', include('covid19.urls')),
-]
+    # path('covid19/', include('covid19.urls')),
+    path('ewallet/', include('ewallet.urls')),
+    path('resumeBuilder/', include('resumeBuilder.urls')),
+    path('picArt/', include('PicArt.urls')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,75 @@
+{% extends 'ewallet/base.html' %}
+{% load static %}
+
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<!-- Body -->
+<div class="container">
+    <main role="main">
+
+        <div class="card px-3 rounded-0 border-0">
+            <div class="py-3 text-dark">
+                <h5>Transactions History</h5>
+            </div>
+            <div class="table-responsive scroll">
+                <table class="table table-hover">
+                    <thead class="text-muted">
+                        <tr>
+                            <th scope="col">DATE</th>
+                            <th scope="col">TIME</th>
+                            <th scope="col">TRANSACTION DETAILS</th>
+                            <th scope="col">AMOUNT (₹)</th>
+                            <th scope="col">AVAILABLE BALANCE (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for tr in  TransactionsList %}
+                        <tr>
+                            {% for td in tr %}
+                            <td><span>{{td}}</span></td>
+                            {% endfor %}
+                        </tr>                           
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}
+
+
+
+
+
+
+<!-- 
+
+
+
+
+    {% for j in i %}
+                                <tr>
+                                    <th>{{date}} |<span style="font-size: 10px;">{{time}}</span></th>
+                                    <td>{{j}}</td>
+                                    <td><span class="text-success">+ ₹3.00</span></td>
+                                    <td>₹13.00</td>
+                                </tr>
+                            {% endfor %} -->
+                        <!-- <tr>
+                            <th>{{date}} |<span style="font-size: 10px;">{{time}}</span></th>
+                            <td>Cashback from Galuctus Funw...</td>
+                            <td><span class="text-success">+ ₹3.00</span></td>
+                            <td>₹13.00</td>
+                        </tr> -->
+                        <!-- <tr>
+                            <th>{{date}} |<span style="font-size: 10px;">{{time}}</span></th>
+                            <td>Paid for order to Reliance Jio</td>
+                            <td><span class="text-danger">- ₹160.00</span></td>
+                            <td>₹173.00</td>
+                        </tr> -->
+
+
+ -->

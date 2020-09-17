@@ -1,0 +1,176 @@
+{% extends 'resumeBuilder/base.html' %}
+{% load static %}
+
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<!-- Body -->
+<div class="container">
+    <main role="main">
+
+        <div class="tools">
+            <div class="d-flex justify-content-between">
+                <h4 class="mb-2">My Resume</h4>
+                <h4 class="mb-2">
+                    <span title="Edit"><a href="/resumeBuilder/edit/"><i
+                                class="fa fa-pencil-square-o text-dark"></i></a></span>
+                    <span title="Print"><a href="#" onclick="printResume('resume')"><i
+                                class="fa fa-print text-dark"></i></a></span>
+                    <span title="Share"><a href="#"><i class="fa fa-share-alt text-dark"></i></a></span>
+                </h4>
+            </div>
+            <hr>
+        </div>
+        <!-- Resume -->
+        <div class="jumbotron shadow bg-white my-0" id="resume"
+            style="width: 21cm; height: auto; margin: 30mm 45mm 30mm 45mm;">
+            <div class="col-md-12 order-md-1">
+                <div>
+
+                    <div class="d-flex justify-content-between">
+                        <h6 class="mb-2 text-left">
+                            <p class="my-1 h4">Kajal Joshi</p>
+                            <p class="my-1 font-weight-normal"><a href="#">joshikajal507@gmail.com</a></p>
+                            <p class="my-1 font-weight-normal">+91-9636130024</p>
+                        </h6>
+                        <h6 class="mb-2 text-right">
+                            <p class="my-1 font-weight-normal"><a href="https://github.com/kajaljoshi507">Github</a></p>
+                            <p class="my-1 font-weight-normal"><a
+                                    href="https://www.linkedin.com/in/kajal-joshi-a63864190"
+                                    target="_blank">Linkedin</a></p>
+                            <p class="my-1">Python, C and C++ Programming</p>
+                        </h6>
+                    </div>
+                    <hr>
+
+                    <article class="objective">
+                        <h3 class="my-0 h5 text-primary my-3 text-uppercase">Career Objective</h3>
+                        <p class="my-1">
+                            To work in an organisation that believes in innovation where I can enhance my knowledge and
+                            diversify my skills and therefore utilise them for the betterment of the era. </p>
+                    </article>
+
+                    <!-- <article class="experience">
+                        <h3 class="my-0 h5 text-danger my-3 text-uppercase">Experience</h3>
+                        <div class="content">
+                            <div class="d-flex justify-content-between">
+                                <p class="font-weight-normal text-dark text-left"><b>SacredBits - a startup company</b>,
+                                    Bangalore, Karnataka, India - : Front End Web Developer</p>
+                                <p class="text-right">January 2018.</p>
+                            </div>
+                            <ul>
+                                <li class="font-weight-normal"> SacredBits offers best website designing & web
+                                    application development with
+                                    interactive UI that has better user experience & make sure your website stand out to
+                                    give you an
+                                    edge over competitors, lesser bounce rates, less loading time and load handling,
+                                    mobile friendly
+                                    websites & have that standout factor that will compel your visitors to become
+                                    customers.</li>
+                            </ul>
+                        </div>
+                    </article> -->
+
+                    <article class="education">
+                        <h3 class="my-0 h5 text-primary my-3 text-uppercase">Education</h3>
+                        <ul>
+                            <li>
+                                <div class="content">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="font-weight-normal text-dark text-left">Geetanjali Institute of
+                                            Technical Studies,
+                                            Dabok, Udaipur - <b>Bachelor of Technology</b></p>
+                                        <p class="text-right">May 2021</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="font-weight-normal text-dark text-left">Gyanoday Senior Secondary
+                                            School Amet, (Rajsmand) - <b>Senior Secondary School</b></p>
+                                        <p class="text-right">May 2017</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="font-weight-normal text-dark text-left">Gyanoday Senior Secondary
+                                            School Amet, (Rajsmand) - <b>Secondary School</b></p>
+                                        <p class="text-right">June 2015</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="skills">
+                        <h3 class="my-0 h5 text-primary my-3 text-uppercase">Technical/Software skills</h3>
+                        <ul>
+                            <li class="font-weight-normal"><b>Web Development : </b>HTML, CSS & javaScript and Bootstrap.</li>
+                            <li class="font-weight-normal"><b>Adobe Software : </b>Adobe Photoshop.</li>
+                            <li class="font-weight-normal"><b>Use IDE for write code : </b>Visual Studio Code, Notepad++ etc.</li>
+                        </ul>
+                    </article>
+
+                    <article class="awards_Achievement">
+                        <h3 class="my-0 h5 text-primary my-3 text-uppercase">Interest & Achievement</h3>
+                        <ul>
+                            <li class="font-weight-normal">The Fundamentals of Digital Marketing, Google Digital
+                                Unlocked, 2018</li>
+                            <li class="font-weight-normal">25 days of hands-on training on web development, Digitex
+                                Solutions, 2018 </li>
+                            <li class="font-weight-normal">25 days of hands-on training of python, Affiliated to RTU,
+                                Kota and approved by AICTE, 2019
+                            </li>
+                            <li class="font-weight-normal">7 days of training on AR-VR on college campus </li>
+                            <li class="font-weight-normal">7 days of training on Android App Development, Affiliated to
+                                RTU, Kota and approved by
+                                AICTE, 2019 </li>
+                            <li class="font-weight-normal">7 days of training on Machine Learning and Artificial
+                                Intelligence.</li>
+                            <li class="font-weight-normal">7 days of training on Cloud Computing using AWS (amazon web
+                                services).</li>
+                        </ul>
+                    </article>
+
+                    <article class="PROJECTS">
+                        <h3 class="my-0 h5 text-primary my-3 text-uppercase">PROJECTS</h3>
+                        <p>See my all projects list on Github link. <br>
+                            Visit us: <a href="https://github.com/kajaljoshi507"
+                                target="_blank">https://github.com/kajaljoshi507</a>
+                        </p>
+                    </article>
+
+                    <article class="REQUIREMENTS">
+                        <h3 class="my-0 h5 text-primary my-3 text-uppercase">REQUIREMENTS</h3>
+                        <p>Internship : 1 to 2 months. After May 2020.</p>
+                    </article>
+                    
+                    <article class="PERSONALINFORMATION">
+                        <h3 class="my-0 h5 text-primary my-3 text-uppercase">PERSONAL INFORMATION</h3>
+                        <ul>
+                            <li><b>Address : </b>Jawahar Nagar opp. terapanth sabha bhavan parmeshti, Amet.</li>
+                            <li><b>Father's Name : </b>Pawan Kumar Joshi</li>
+                            <li><b>Gender : </b>Female</li>
+                            <li><b>Date of Birth : </b>Feb 03, 2000</li>
+                            <li><b>Marital Status : </b>Single</li>
+                            <li><b>Nationality : </b>Indian</li>
+                            <li><b>Hobbies & Interest : </b>Signing, Dancing, Listening Music, Travelling etc.</li>
+                            <li><b>Languages Known : </b>English, Hindi</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- End Resume -->
+
+    </main>
+</div>
+
+{% endblock %}
